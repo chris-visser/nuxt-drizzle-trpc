@@ -4,13 +4,39 @@ This is a starting point and example for what I deem an ideal full-stack Nuxt se
 This Nuxt project provides out of the box full-stack type-safety and validations
 which are "inferred" from the database all the way up into the composables and components 
 
+## Getting started
+
+Install dependencies
+
+```bash
+pnpm install # Could also be Yarn, NPM or Bun if you prefer
+```
+
+Add a Postgres URL to the `.env` file. (see `.env.example`). I recommend using Neon DB. 
+Its fully managed and has a generous free tier (3gig storage) at the time of writing.
+Vercel is using Neon DB under the hood for its own Postgres offering, but only provides 
+256mb free storage.
+
+## DB Migrations 
+
+Simply change the schemas or add new TS files at `./src/server/db/*.ts`
+
+When you've made changes, you should generate a SQL migration file using the below command.
+
+```bash
+pnpm migrations
+```
+
+This will add a .sql file to the `./src/server/db/migrations` folder. When the project 
+is started in dev mode, it will automatically sync that migration with the database
+
 ## Hosting (fill in yourself)
 
-| What | Where | Description |
-|---|---|---|
-| DNS, Email, Domain |  | 
-| Nuxt / Nitro tRPC API |  |  |
-| Neon / Postgres DB | [Neon](https://neon.tech/) |  |
+| What | Recommendation    | Description                |
+|---|-------------------|----------------------------|
+| DNS, Email, Domain | Hostnet, Cloudflare, whatever |                            | 
+| Nuxt / Nitro tRPC API | Vercel or Netlify | Both options are just fine |
+| Neon / Postgres DB | [Neon](https://neon.tech/) |               |
 
 ## Stack
 
