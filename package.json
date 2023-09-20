@@ -1,0 +1,29 @@
+{
+  "name": "nuxt-app",
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "migrations": "drizzle-kit generate:pg"
+  },
+  "devDependencies": {
+    "@nuxt/devtools": "latest",
+    "@nuxtjs/tailwindcss": "^6.8.0",
+    "@tailwindcss/typography": "^0.5.10",
+    "drizzle-kit": "^0.19.13",
+    "nuxt": "^3.7.1",
+    "nuxt-icon": "^0.5.0"
+  },
+  "dependencies": {
+    "@neondatabase/serverless": "^0.6.0",
+    "@trpc/client": "^10.38.2",
+    "@trpc/server": "^10.38.2",
+    "drizzle-orm": "^0.28.6",
+    "drizzle-zod": "^0.5.1",
+    "trpc-nuxt": "^0.10.12",
+    "zod": "^3.22.2"
+  }
+}
